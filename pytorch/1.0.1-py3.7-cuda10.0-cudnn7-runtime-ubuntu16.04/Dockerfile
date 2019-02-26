@@ -1,4 +1,4 @@
-# Pytorch 1.0.1, CUDA 10, CUDNN 7 
+# Pytorch 1.0.1, CUDA 10, CUDNN 7
 # Wei Yang
 # platero.yang@gmail.com
 FROM nvidia/cuda:10.0-cudnn7-devel-ubuntu16.04
@@ -31,3 +31,19 @@ RUN conda install -y -c pytorch \
     torchvision=0.2.1 \
     "pytorch=1.0.1=py3.7_cuda10.0.130_cudnn7.4.2_2" \
 &&  conda clean -ya
+
+# Install any needed packages specified in requirements.txt
+RUN pip install numpy>=1.8.4
+RUN pip install matplotlib>=1.4.2
+RUN pip install EasyDict>=1.7
+RUN pip install opencv-python>=3.4.1.15
+RUN pip install Cython
+RUN pip install scipy
+RUN pip install pandas
+RUN pip install pyyaml
+RUN pip install json_tricks
+RUN pip install scikit-image
+RUN pip install tensorboardX>=1.2
+
+# Set the working directory to /app
+WORKDIR /app
