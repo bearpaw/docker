@@ -44,6 +44,9 @@ RUN pip install pyyaml
 RUN pip install json_tricks
 RUN pip install scikit-image
 RUN pip install tensorboardX>=1.2
+RUN pip install tqdm>=4.19.8
+RUN pip install spacepy>=0.1.6
+RUN pip install requests>=2.19.1
 
 # Set the working directory to /app
 WORKDIR /app
